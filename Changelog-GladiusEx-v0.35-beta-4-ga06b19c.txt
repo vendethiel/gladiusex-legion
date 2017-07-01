@@ -1,0 +1,6 @@
+Ketho:
+	- bandaid fix; Spell IDs not included
+slaren:
+	- changed anchor font to prevent the text overflowing
+	- powerbar: changed the color used during arena prep to the configured one
+	- healthbar: fixed wrong class colors during arena prep
