@@ -118,8 +118,8 @@ LCT_SpellData[117014] = {
 -- Elemental Mastery
 LCT_SpellData[16166] = {
 	class = "SHAMAN",
+	specID = { 262 },
 	talent = true,
-	specID = { 262 }
 	offensive = true,
 	duration = 20,
 	cooldown = 120
@@ -127,7 +127,7 @@ LCT_SpellData[16166] = {
 -- Healing Tide Totem
 LCT_SpellData[108280] = {
 	class = "SHAMAN",
-	specID = { 264 }
+	specID = { 264 },
 	heal = true,
 	duration = 10,
 	cooldown = 180
