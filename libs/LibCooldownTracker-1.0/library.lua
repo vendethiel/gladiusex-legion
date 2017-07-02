@@ -334,6 +334,8 @@ local function enable()
 	lib.frame:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
 	lib.frame:RegisterEvent("UNIT_SPELLCAST_SUCCEEDED")
 	lib.frame:RegisterEvent("UNIT_NAME_UPDATE")
+	lib.frame:RegisterEvent("ARENA_CROWD_CONTROL_SPELL_UPDATE")
+	lib.frame:RegisterEvent("ARENA_COOLDOWNS_UPDATE")
 
 	lib.tracked_players = {}
 	lib.guid_to_unitid = {}
@@ -406,6 +408,17 @@ end
 function lib:GetUnitCooldownInfo(unitid, spellid)
 	local tpu = lib.tracked_players[unitid]
 	return tpu and tpu[spellid]
+end
+
+function lib:SetUnitTrinket(unit, spellid)
+	local tpu = lib.tracked_players[unitid]
+	if tpu and not tpu[spellid] then
+		print("reg@"..unit.."="..spellid)
+		tpu[spellid] = { detected = true }
+	end
+	if not tpu then
+		print("no tpu@"..unit)
+	end
 end
 
 --- Returns the raw data of all the cooldowns. See the cooldowns_*.lua data files for more details about its structure.
@@ -568,4 +581,20 @@ end
 
 function events:UNIT_NAME_UPDATE(event, unit)
 	UpdateGUID(unit)
+end
+
+function events:ARENA_CROWD_CONTROL_SPELL_UPDATE(event, unit, spellID)
+	print("ARENA_CROWD_CONTROL_SPELL_UPDATE@"..unit.."="..spellID)
+	lib.SetUnitTrinket(unit, spellID)
+	lib.callbacks:Fire("LCT_CooldownDetected", unit, spellid)
+end
+
+function events:ARENA_COOLDOWNS_UPDATE(event, unit)
+	C_PvP.RequestCrowdControlSpell(unit)
+	local spellID, startTime, duration = C_PvP.GetArenaCrowdControlInfo(unit)
+	if spellID then
+		print("ARENA_COOLDOWNS_UPDATE@"..unit.."="..spellID)
+		lib.SetUnitTrinket(unit, spellID)
+		lib.callbacks:Fire("LCT_CooldownDetected", unit, spellid)
+	end
 end

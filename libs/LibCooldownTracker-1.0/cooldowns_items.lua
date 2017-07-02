@@ -5,7 +5,6 @@
 -- Every Man For Himself
 -- TODO needs to set all trinkets
 LCT_SpellData[59752] = {
-	pvp_trinket = true,
 	race = "Human",
 	sets_cooldown = { spellid = 195710, cooldown = 30 },
 	cooldown = 120
@@ -20,7 +19,6 @@ LCT_SpellData[195710] = {
 -- Gladiator's Medallion
 LCT_SpellData[208683] = {
 	pvp_trinket = true,
-	talent = true,
 	replaces = 195710,
 	sets_cooldown = { spellid = 7744, cooldown = 30 },
 	cooldown = 120
@@ -28,7 +26,6 @@ LCT_SpellData[208683] = {
 -- Adaptation
 LCT_SpellData[214027] = {
 	pvp_trinket = true,
-	talent = true,
 	replaces = 195710,
 	sets_cooldown = { spellid = 7744, cooldown = 30 },
 	cooldown = 60
@@ -36,7 +33,6 @@ LCT_SpellData[214027] = {
 -- Relentless
 LCT_SpellData[196029] = {
 	pvp_trinket = true,
-	talent = true,
 	replaces = 195710,
 	sets_cooldown = { spellid = 7744, cooldown = 30 }
 }

@@ -352,6 +352,7 @@ end
 function Cooldowns:OnEnable()
 	CT.RegisterCallback(self, "LCT_CooldownUsed")
 	CT.RegisterCallback(self, "LCT_CooldownsReset")
+	CT.RegisterCallback(self, "LCT_CooldownDetected")
 	self:RegisterEvent("UNIT_NAME_UPDATE")
 	self:RegisterMessage("GLADIUS_SPEC_UPDATE")
 end
@@ -405,9 +406,6 @@ function Cooldowns:GetModuleAttachFrame(unit, point)
 	return self:GetGroupState(unit, gidx).frame
 end
 
-function Cooldowns:GLADIUS_SPEC_UPDATE(event, unit)
-	self:UpdateIcons(unit)
-end
 
 function Cooldowns:UNIT_NAME_UPDATE(event, unit)
 	-- hopefully at this point the opponent's faction is known
@@ -416,11 +414,20 @@ function Cooldowns:UNIT_NAME_UPDATE(event, unit)
 	end
 end
 
+function Cooldowns:GLADIUS_SPEC_UPDATE(event, unit)
+	self:UpdateIcons(unit)
+end
+
 function Cooldowns:LCT_CooldownsReset(event, unit)
 	self:UpdateIcons(unit)
 end
 
 function Cooldowns:LCT_CooldownUsed(event, unit, spellid)
+	self:UpdateIcons(unit)
+end
+
+function Cooldowns:LCT_CooldownDetected(event, unit, spellid)
+	print("wesh yo")
 	self:UpdateIcons(unit)
 end
 
@@ -597,8 +604,16 @@ local function GetCooldownList(unit, group)
 		-- check if the spell is enabled by the user
 		if db.cooldownsSpells[spellid] or (spelldata.replaces and db.cooldownsSpells[spelldata.replaces]) then
 			local tracked = CT:GetUnitCooldownInfo(unit, spellid)
+			local detected = tracked and tracked.detected
+			if spelldata.pvp_trinket then
+				print("debug pvp"..spellid.."@"..unit.."="..(detected and "detected" or "not detected"))
+			end
 			-- check if the spell has a cooldown valid for an arena, and check if it is a talent that has not yet been detected
-			if (not spelldata.cooldown or spelldata.cooldown < 600) and ((not spelldata.glyph and not spelldata.talent and not spelldata.pet) or (tracked and tracked.detected) or not db.cooldownsHideTalentsUntilDetected) then
+			if (not spelldata.cooldown or spelldata.cooldown < 600) and
+			   ((not spelldata.glyph and not spelldata.talent and not spelldata.pet and not spelldata.pvp_trinket) or detected or not db.cooldownsHideTalentsUntilDetected) then
+				if spelldata.pvp_trinket then
+					print("cooldown list@"..unit.."="..spellid)
+				end
 				-- check if the spell requires an aura
 				if not spelldata.requires_aura or UnitBuff(unit, spelldata.requires_aura_name) then
 					if spelldata.replaces then
