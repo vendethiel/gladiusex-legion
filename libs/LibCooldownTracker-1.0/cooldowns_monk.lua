@@ -88,24 +88,6 @@ LCT_SpellData[214326] = {
 	offensive = true,
 	cooldown = 75,
 }
--- Nimble Brew
---V: removed in legion 
---LCT_SpellData[137562] = {
---	class = "MONK",
---	defensive = true,
---	duration = 6,
---	cooldown = 120,
---}
-
--- Monk/talents
--- Charging Ox Wave
---V: removed in legion 
---LCT_SpellData[119392] = {
---	class = "MONK",
---	talent = true,
---	stun = true,
---	cooldown = 30,
---}
 -- Chi Brew
 LCT_SpellData[115399] = {
 	class = "MONK",
@@ -208,15 +190,6 @@ LCT_SpellData[115308] = {
 	duration = 3,
 	cooldown = 6,
 }
--- Guard
---V: removed in legion 
---LCT_SpellData[115295] = {
---	class = "MONK",
---	specID = { 268 },
---	defensive = true,
---	duration = 30,
---	cooldown = 30
---}
 -- Keg Smash
 LCT_SpellData[121253] = {
 	class = "MONK",

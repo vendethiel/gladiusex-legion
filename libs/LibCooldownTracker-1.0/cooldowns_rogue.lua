@@ -54,14 +54,6 @@ LCT_SpellData[2983] = {
 	duration = 8,
 	cooldown = 60
 }
--- Tricks of the Trade
--- V: removed in legion
---LCT_SpellData[57934] = {
---	class = "ROGUE",
---	offensive = true,
---	duration = 6,
---	cooldown = 30
---}
 -- Vanish
 LCT_SpellData[1856] = {
 	class = "ROGUE",
@@ -104,25 +96,7 @@ LCT_SpellData[199754] = {
 	duration = 10,
 	cooldown = 120
 }
--- Killing Spree
--- V: removed in legion
---LCT_SpellData[51690] = {
---	class = "ROGUE",
---	specID = { 260 },
---	offensive = true,
---	duration = 3,
---	cooldown = 120
---}
-
 -- Rogue/Subtlety 261
--- Premeditation
---V: removed in legion 
---LCT_SpellData[14183] = {
---	class = "ROGUE",
---	specID = { 261 },
---	offensive = true,
---	cooldown = 20
---}
 -- Shadow Dance
 --V: changed ID in legion
 LCT_SpellData[185313] = {
@@ -169,14 +143,6 @@ LCT_SpellData[74001] = {
 	cooldown = 120
 }
 -- Preparation
---V: removed in legion 
---LCT_SpellData[14185] = {
---	class = "ROGUE",
---	talent = true,
---	defensive = true,
---	resets = { 2983, 1856, 31224, 5277 },
---	cooldown = 300
---}
 -- Shadowstep
 LCT_SpellData[36554] = {
 	class = "ROGUE",

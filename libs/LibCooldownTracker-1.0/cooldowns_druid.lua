@@ -65,31 +65,6 @@ LCT_SpellData[49376] = 102401 -- Cat
 LCT_SpellData[102416] = 102401 -- Aquatic
 LCT_SpellData[102417] = 102401 -- Travel
 LCT_SpellData[102383] = 102401 -- Moonkin
--- Force of Nature
---V: removed in legion 
---LCT_SpellData[33831] = { -- Balance
---	class = "DRUID",
---	talent = true,
---	offensive = true,
---	charges = 3,
---	cooldown = 20
---}
---LCT_SpellData[102706] = 33831 -- Guardian
---LCT_SpellData[102703] = 33831 -- Feral
---LCT_SpellData[102693] = 33831 -- Restoration
--- Heart of the Wild
---V: removed in legion 
---LCT_SpellData[108291] = {
---	class = "DRUID",
---	talent = true,
---	offensive = true,
---	defensive = true,
---	duration = 45,
---	cooldown = 360
---}
---LCT_SpellData[108292] = 108291
---LCT_SpellData[108293] = 108291
---LCT_SpellData[108294] = 108291
 -- Mass Entanglement
 LCT_SpellData[102359] = {
 	class = "DRUID",
@@ -104,15 +79,6 @@ LCT_SpellData[5211] = {
 	stun = true,
 	cooldown = 50
 }
--- Nature's Swiftness
---V: removed in legion 
---LCT_SpellData[132158] = {
---	class = "DRUID",
---	talent = true,
---	heal = true,
---	cooldown_starts_on_aura_fade = true,
---	cooldown = 60
---}
 -- Nature's Vigil
 LCT_SpellData[124974] = {
 	class = "DRUID",
@@ -146,14 +112,6 @@ LCT_SpellData[102793] = {
 
 -- Druid/Balance
 -- Celestial Alignment
---V: removed in legion 
---LCT_SpellData[112071] = {
---	class = "DRUID",
---	specID = { 102 },
---	offensive = true,
---	duration = 15,
---	cooldown = 180
---}
 -- Remove Corruption
 LCT_SpellData[2782] = {
 	class = "DRUID",
@@ -171,43 +129,6 @@ LCT_SpellData[78675] = {
 	duration = 10,
 	cooldown = 60
 }
---[[ TODO: support shared charges
--- Starfall
-LCT_SpellData[48505] = {
-	class = "DRUID",
-	specID = { 102 },
-	offensive = true,
-	duration = 10,
-	cooldown = 90
-}
--- Starsurge
-LCT_SpellData[78674] = {
-	class = "DRUID",
-	specID = { 102 },
-	offensive = true,
-	cooldown = 15
-}
-]]
-
--- Druid/Feral
--- Berserk (Cat Form)
---LCT_SpellData[106951] = {
---	class = "DRUID",
---	specID = { 103, 104 },
---	offensive = true,
---	sets_cooldown = { spellid = 50334, cooldown = 180 },
---	duration = 15,
---	cooldown = 180
---}
--- Berserk (Bear Form)
---LCT_SpellData[50334] = {
---	class = "DRUID",
---	specID = { 103, 104 },
---	offensive = true,
---	sets_cooldown = { spellid = 106951, cooldown = 180 },
---	duration = 10,
---	cooldown = 180
---}
 -- Tiger's Fury
 LCT_SpellData[5217] = {
 	class = "DRUID",
@@ -216,16 +137,6 @@ LCT_SpellData[5217] = {
 	duration = 6,
 	cooldown = 30
 }
--- Savage Defense
---V: removed in legion 
---LCT_SpellData[62606] = {
---	class = "DRUID",
---	specID = { 104 },
---	charges = 2,
---	defensive = true,
---	duration = 6,
---	cooldown = 9
---}
 -- Druid/Restoration
 -- Ironbark
 LCT_SpellData[102342] = {

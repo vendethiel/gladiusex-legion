@@ -5,7 +5,7 @@ LCT_SpellData[18499] = {
 	class = "WARRIOR",
 	offensive = true,
 	duration = 6,
-	cooldown = 30
+	cooldown = 60
 }
 -- Charge
 LCT_SpellData[100] = {
@@ -28,6 +28,7 @@ LCT_SpellData[3411] = {
 -- Intimidating Shout
 LCT_SpellData[5246] = {
 	class = "WARRIOR",
+	specID = { 72 },
 	cc = true,
 	cooldown = 90
 }
@@ -38,59 +39,46 @@ LCT_SpellData[6552] = {
 	silence = true,
 	cooldown = 15
 }
--- Rallying Cry
+-- Commanding Shout
 LCT_SpellData[97462] = {
 	class = "WARRIOR",
+	specID = { 72 },
 	defensive = true,
 	duration = 10,
 	cooldown = 180
 }
--- Recklessness
+-- Enraged Regeneration
+LCT_SpellData[184364] = {
+	class = "WARRIOR",
+	specID = { 72 },
+	defensive = true,
+	duration = 8,
+	cooldown = 120
+}
+-- Battle Cry
 LCT_SpellData[1719] = {
 	class = "WARRIOR",
 	offensive = true,
-	duration = 12,
-	cooldown = 180
+	duration = 5,
+	cooldown = 60
 }
--- Shattering Throw
---LCT_SpellData[64382] = {
---	class = "WARRIOR",
---	mass_dispel = true,
---	offensive = true,
---	cooldown = 300
---}
 -- Shield Wall
 LCT_SpellData[871] = {
 	class = "WARRIOR",
+	specID = { 73 },
 	defensive = true,
-	duration = 12,
-	cooldown = 180
+	duration = 8,
+	cooldown = 240
 }
 -- Spell Reflection
 LCT_SpellData[23920] = {
 	class = "WARRIOR",
+	specID = { 73 },
 	defensive = true,
 	duration = 5,
 	cooldown = 25
 }
 -- Warrior/talents
--- Enraged Regeneration
---V: removed in legion
---LCT_SpellData[55694] = {
---	class = "WARRIOR",
---	talent = true,
---	heal = true,
---	duration = 5,
---	cooldown = 60
---}
--- Impending Victory
---V: removed in legion 
---LCT_SpellData[103840] = {
---	class = "WARRIOR",
---	heal = true,
---	talent = true,
---	cooldown = 30
---}
 -- Staggering Shout
 LCT_SpellData[107566] = {
 	class = "WARRIOR",
@@ -98,14 +86,6 @@ LCT_SpellData[107566] = {
 	cc = true,
 	cooldown = 40
 }
--- Disrupting Shout
---V: removed in legion 
---LCT_SpellData[102060] = {
---	class = "WARRIOR",
---	talent = true,
---	interrupt = true,
---	cooldown = 40
---}
 -- Shockwave
 LCT_SpellData[46968] = {
 	class = "WARRIOR",
@@ -119,15 +99,16 @@ LCT_SpellData[46924] = {
 	talent = true,
 	offensive = true,
 	duration = 6,
-	cooldown = 60
+	cooldown = 90
 }
 -- Dragon Roar
 LCT_SpellData[118000] = {
 	class = "WARRIOR",
+	specID = { 72 },
 	talent = true,
 	knockback = true,
 	duration = 0.5,
-	cooldown= 60
+	cooldown = 25,
 }
 -- Vigilance
 LCT_SpellData[114030] = {
@@ -137,15 +118,6 @@ LCT_SpellData[114030] = {
 	duration = 12,
 	cooldown = 120
 }
--- Safeguard
---V: removed in legion 
---LCT_SpellData[114029] = {
---	class = "WARRIOR",
---	talent = true,
---	defensive = true,
---	duration = 6,
---	cooldown = 30
---}
 -- Mass Spell Reflection
 LCT_SpellData[114028] = {
 	class = "WARRIOR",
@@ -178,15 +150,6 @@ LCT_SpellData[12292] = {
 	cooldown = 60
 }
 -- Warrior/Arms
--- Colossus Smash
---V: removed in legion 
---LCT_SpellData[86346] = {
---	class = "WARRIOR",
---	specID = { 71, 72 },
---	offensive = true,
---	duration = 6,
---	cooldown = 20
---}
 -- Mortal Strike
 LCT_SpellData[12294] = {
 	class ="WARRIOR",
@@ -197,10 +160,18 @@ LCT_SpellData[12294] = {
 -- Die by the Sword
 LCT_SpellData[118038] = {
 	class = "WARRIOR",
-	specID = { 71, 72 },
+	specID = { 71 },
 	defensive = true,
 	duration = 8,
-	cooldown = 120
+	cooldown = 180
+}
+-- Defensive Stance
+LCT_SpellData[197690] = {
+	class = "WARRIOR",
+	specID = { 71 },
+	defensive = true,
+	talent = true,
+	cooldown = 6
 }
 -- Warrior/Fury
 -- Warrior/Protection
@@ -209,14 +180,14 @@ LCT_SpellData[1160] = {
 	class = "WARRIOR",
 	specID = { 73 },
 	defensive = true,
-	duration = 10,
-	cooldown = 60
+	duration = 8,
+	cooldown = 90
 }
 -- Last Stand
 LCT_SpellData[12975] = {
 	class = "WARRIOR",
 	specID = { 73 },
 	defensive = true,
-	duration = 20,
+	duration = 15,
 	cooldown = 180
 }

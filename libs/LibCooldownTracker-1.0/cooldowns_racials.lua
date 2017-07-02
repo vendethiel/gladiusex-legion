@@ -45,6 +45,7 @@ LCT_SpellData[20577] = {
 LCT_SpellData[7744] = {
 	race = "Scourge",
 	sets_cooldown = { spellid = 42292, cooldown = 30 }, -- PvP trinket
+	-- V: TODO need to set *ALL* pvp trinkets
 	cooldown = 120,
 }
 -- Darkflight (Worgen)

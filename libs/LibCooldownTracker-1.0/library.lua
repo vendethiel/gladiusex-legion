@@ -519,7 +519,6 @@ function lib:IterateCooldowns(class, specID, race)
 	local state = {}
 	state.class = class
 	state.specID = specID
-	state.stored_race = race or "" -- hack for racial pvp trinket
 	state.race = race or ""
 	state.item = true
 	state.pvp = true

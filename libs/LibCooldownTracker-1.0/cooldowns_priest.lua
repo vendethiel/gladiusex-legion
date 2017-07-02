@@ -1,12 +1,5 @@
 -- ================ PRIEST ================
 -- Priest/baseline
--- Fear Ward
---V: removed in legion 
---LCT_SpellData[6346] = {
---	class = "PRIEST",
---	defensive = true,
---	cooldown = 180
---}
 -- Prayer of Mending
 LCT_SpellData[33076] = {
 	class = "PRIEST",
@@ -49,14 +42,6 @@ LCT_SpellData[8122] = {
 	cc = true,
 	cooldown = 30,
 }
--- Void Tendrils
---V: removed in legion 
---LCT_SpellData[108920] = {
---	class = "PRIEST",
---	talent = true,
---	cc = true,
---	cooldown = 30
---}
 -- Phantasm
 LCT_SpellData[114239] = {
 	class = "PRIEST",
@@ -105,14 +90,6 @@ LCT_SpellData[112833] = {
 	duration = 6,
 	cooldown = 30
 }
--- Angelic Bulwark
---V: removed in legion 
---LCT_SpellData[108945] = {
---	class = "PRIEST",
---	talent = true,
---	defensive = true,
---	cooldown = 90
---}
 -- Power Infusion
 LCT_SpellData[10060] = {
 	class = "PRIEST",
@@ -140,15 +117,6 @@ LCT_SpellData[197862] = {
 	duration = 15,
 	cooldown = 60
 }
--- Cascade
---V: removed in legion 
---LCT_SpellData[121135] = {
---	class = "PRIEST",
---	talent = true,
---	offensive = true,
---	heal = true,
---	cooldown = 25
---}
 -- Divine Star
 LCT_SpellData[110744] = {
 	class = "PRIEST",
@@ -174,15 +142,6 @@ LCT_SpellData[14914] = {
 	offensive = true,
 	cooldown = 10
 }
--- Archangel
---V: removed in legion 
---LCT_SpellData[81700] = {
---	class = "PRIEST",
---	specID = { 256 },
---	heal = true,
---	duration = 18,
---	cooldown = 30
---}
 -- Penance
 LCT_SpellData[47540] = {
 	class = "PRIEST",
@@ -240,14 +199,6 @@ LCT_SpellData[200183] = {
 	duration = 12,
 	cooldown = 180,
 }
--- Lightwell
---V: removed in legion 
---LCT_SpellData[724] = {
---	class = "PRIEST",
---	specID = { 257 },
---	heal = true,
---	cooldown = 180,
---}
 -- Divine Hymn
 LCT_SpellData[64843] = {
 	class = "PRIEST",
@@ -298,14 +249,6 @@ LCT_SpellData[15286] = {
 	duration = 6,
 	cooldown = 120
 }
--- Psychic Horror
--- V: removed in legion
---LCT_SpellData[64044] = {
---	class = "PRIEST",
---	specID = { 258 },
---	cc = true,
---	cooldown = 45
---}
 -- Silence
 LCT_SpellData[15487] = {
 	class = "PRIEST",
@@ -313,7 +256,7 @@ LCT_SpellData[15487] = {
 	silence = true,
 	cooldown = 45
 }
--- V: legion void torrent
+-- Void torrent
 LCT_SpellData[205065] = {
 	class = "PRIEST",
 	specID = { 258 },

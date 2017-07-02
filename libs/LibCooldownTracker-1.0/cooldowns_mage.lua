@@ -26,13 +26,6 @@ LCT_SpellData[12051] = {
 	duration = 6,
 	cooldown = 182
 }
--- Fire Blast
---V: removed in legion 
---LCT_SpellData[2136] = {
---	class = "MAGE",
---	offensive = true,
---	cooldown = 8
---}
 -- Flamestrike
 LCT_SpellData[2120] = {
 	class = "MAGE",
@@ -70,14 +63,6 @@ LCT_SpellData[198111] = {
 	duration = 6,
 	cooldown = 45
 }
--- Remove Curse
---V: removed in legion 
---LCT_SpellData[475] = {
---	class = "MAGE",
---	dispel = true,
---	cooldown_starts_on_dispel = true,
---	cooldown = 8
---}
 
 -- Time Warp
 LCT_SpellData[80353] = {
@@ -87,21 +72,6 @@ LCT_SpellData[80353] = {
 	cooldown = 300
 }
 -- Mage/talents
--- Alter Time
---V: removed in legion 
---LCT_SpellData[108978] = {
---	class = "MAGE",
---	defensive = true,
---	duration = 10,
---	cooldown = 60
---}
--- Blazing Speed
--- V: in legion, gets triggered from cauterize
---LCT_SpellData[108843] = {
---	class = "MAGE",
---	duration = 6,
---	cooldown = 25
---}
 -- Cauterize
 LCT_SpellData[86949] = {
 	class = "MAGE",
@@ -118,15 +88,6 @@ LCT_SpellData[235219] = {
 	resets = { 45438, 11426, 122, 120 }, -- ice block, ice barrier, frost nova, cone of cold
 	cooldown = 300
 }
--- Frostjaw
--- V: removed in legion
---LCT_SpellData[102051] = {
---	class = "MAGE",
---	talent = true,
---	silence = true,
---	cc = true,
---	cooldown = 20
---}
 -- Greater Invisibility (arcane)
 LCT_SpellData[110959] = {
 	class = "MAGE",
@@ -177,15 +138,6 @@ LCT_SpellData[1463] = {
 	duration = 8,
 	cooldown = 25
 }
--- Presence of Mind
---V: removed in legion 
---LCT_SpellData[12043] = {
---	class = "MAGE",
---	talent = true,
---	offensive = true,
---	cooldown_starts_on_aura_fade = true,
---	cooldown = 90
---}
 -- Ring of Frost
 LCT_SpellData[113724] = {
 	class = "MAGE",
@@ -194,15 +146,6 @@ LCT_SpellData[113724] = {
 	duration = 10,
 	cooldown = 45
 }
--- Temporal Shield
---V: removed in legion 
---LCT_SpellData[115610] = {
---	class = "MAGE",
---	talent = true,
---	defensive = true,
---	duration = 4,
---	cooldown = 25
---}
 -- Mage/Arcane
 -- Arcane Power
 LCT_SpellData[12042] = {
@@ -239,14 +182,6 @@ LCT_SpellData[31661] = {
 }
 
 -- Mage/Frost
--- Deep Freeze
---V: removed in legion 
---LCT_SpellData[44572] = {
---	class = "MAGE",
---	specID = { 64 },
---	stun = true,
---	cooldown = 30
---}
 -- Frozen Orb
 LCT_SpellData[84714] = {
 	class = "MAGE",

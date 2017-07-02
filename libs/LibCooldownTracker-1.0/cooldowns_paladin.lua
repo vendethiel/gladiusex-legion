@@ -123,42 +123,6 @@ LCT_SpellData[96231] = {
 	interrupt = true,
 	cooldown = 15
 }
--- Turn Evil
--- V: removed in legion
---LCT_SpellData[10326] = {
---	class = "PALADIN",
---	offensive = true,
---	cooldown = 15
---}
--- Paladin/talents
--- Execution Sentence
---V: removed in legion 
---LCT_SpellData[114157] = {
---	class = "PALADIN",
---	talent = true,
---	offensive = true,
---	heal = true, -- todo: check spellids for off/heal
---	duration = 10,
---	cooldown = 60
---}
--- Fist of Justice
---V: removed in legion
---LCT_SpellData[105593] = {
---	class = "PALADIN",
---	talent = true,
---	stun = true,
---	replaces = 853,
---	cooldown = 30
---}
--- Hand of Purify
---V: removed in legion 
---LCT_SpellData[114039] = {
---	class = "PALADIN",
---	talent = true,
---	defensive = true,
---	duration = 6,
---	cooldown = 30
---}
 -- Holy Avenger
 LCT_SpellData[105809] = {
 	class = "PALADIN",
@@ -260,20 +224,3 @@ LCT_SpellData[86659] = {
 	defensive = true,
 	cooldown = 180
 }
--- Holy Wrath
--- V: removed in legion
---LCT_SpellData[119072] = {
---	class = "PALADIN",
---	specID = { 66 },
---	offensive = true,
---	cooldown = 15
---}
--- Paladin/Retribution
--- Exorcism
---V: removed in legion 
---LCT_SpellData[879] = {
---	class = "PALADIN",
---	specID = { 70 },
---	offensive = true,
---	cooldown = 15
---}

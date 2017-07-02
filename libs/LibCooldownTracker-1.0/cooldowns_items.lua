@@ -7,8 +7,7 @@
 LCT_SpellData[59752] = {
 	pvp_trinket = true,
 	race = "Human",
-	replaces = 195710,
-	sets_cooldown = { spellid = 208683, cooldown = 30 },
+	sets_cooldown = { spellid = 195710, cooldown = 30 },
 	cooldown = 120
 }
 
@@ -26,6 +25,22 @@ LCT_SpellData[208683] = {
 	sets_cooldown = { spellid = 7744, cooldown = 30 },
 	cooldown = 120
 }
+-- Adaptation
+LCT_SpellData[214027] = {
+	pvp_trinket = true,
+	talent = true,
+	replaces = 195710,
+	sets_cooldown = { spellid = 7744, cooldown = 30 },
+	cooldown = 60
+}
+-- Relentless
+LCT_SpellData[196029] = {
+	pvp_trinket = true,
+	talent = true,
+	replaces = 195710,
+	sets_cooldown = { spellid = 7744, cooldown = 30 }
+}
+
 -- Healthstone
 LCT_SpellData[6262] = {
 	item = true,

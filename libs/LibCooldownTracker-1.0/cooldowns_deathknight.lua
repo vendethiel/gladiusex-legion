@@ -108,15 +108,6 @@ LCT_SpellData[108194] = {
 	silence = true,
 	cooldown = 30
 }
--- Death's Advance
---V: removed in legion
---LCT_SpellData[96268] = {
---	class = "DEATHKNIGHT",
---	talent = true,
---	defensive = true,
---	duration = 6,
---	cooldown = 30
---}
 -- Death Pact
 LCT_SpellData[48743] = {
 	class = "DEATHKNIGHT",
@@ -139,16 +130,6 @@ LCT_SpellData[108199] = {
 	cc = true,
 	cooldown = 60
 }
--- Remorseless Winter
---V: removed in legion 
---LCT_SpellData[108200] = {
---	class = "DEATHKNIGHT",
---	talent = true,
---	stun = true,
---	duration = 8,
---	cooldown = 60
---}
-
 
 -- DK/250 - Blood
 -- Vampiric Blood
@@ -160,14 +141,6 @@ LCT_SpellData[55233] = {
 	duration = 10,
 	cooldown = 90
 }
--- Bone Shield
---V: removed in legion 
---LCT_SpellData[49222] = {
---	class = "DEATHKNIGHT",
---	specID = { 250 },
---	defensive = true,
---	cooldown = 60
---}
 -- Dancing Rune Weapon
 LCT_SpellData[49028] = {
 	class = "DEATHKNIGHT",
@@ -177,22 +150,6 @@ LCT_SpellData[49028] = {
 	duration = 12,
 	cooldown = 90
 }
--- Rune Tap
---V: removed in legion 
---LCT_SpellData[48982] = {
---	class = "DEATHKNIGHT",
---	specID = { 250 },
---	heal = true,
---	charges = 2,
---	cooldown = 30
---}
--- Soul Reaper
---LCT_SpellData[114866] = {
---	class = "DEATHKNIGHT",
---	specID = { 250 },
---	offensive = true,
---	cooldown = 6
---}
 -- DK/251 - Frost
 -- Pillar of Frost
 LCT_SpellData[51271] = {
@@ -203,14 +160,6 @@ LCT_SpellData[51271] = {
 	duration = 20,
 	cooldown = 60
 }
--- Soul Reaper
---V: removed in legion 
---LCT_SpellData[130735] = {
---	class = "DEATHKNIGHT",
---	specID = { 251 },
---	offensive = true,
---	cooldown = 6
---}
 -- DK/252 - Unholy
 -- Raise Dead
 LCT_SpellData[46584] = {

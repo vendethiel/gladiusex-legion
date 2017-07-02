@@ -24,13 +24,6 @@ LCT_SpellData[187650] = {
 	cc = true,
 	cooldown = 30
 }
--- Kill Shot
--- V: removed in legion
---LCT_SpellData[53351] = {
---	class = "HUNTER",
---	offensive = true,
---	cooldown = 10
---}
 -- Explosive Trap
 LCT_SpellData[13813] = {
 	class = "HUNTER",
@@ -49,13 +42,6 @@ LCT_SpellData[13809] = {
 	cc = true,
 	cooldown = 30
 }
--- Snake Trap
--- V: removed in legion
---LCT_SpellData[34600] = {
---	class = "HUNTER",
---	offensive = true,
---	cooldown = 30
---}
 -- Master's Call
 LCT_SpellData[53271] = {
 	class = "HUNTER",
@@ -72,22 +58,6 @@ LCT_SpellData[19263] = {
 	charges = 2,
 	cooldown = 180
 }
--- Camouflage
--- V: removed in legion
---LCT_SpellData[51753] = {
---	class = "HUNTER",
---	defensive = true,
---	duration = 6,
---	cooldown = 60
---}
--- Stampede
--- V: removed in legion
---LCT_SpellData[121818] = {
---	class = "HUNTER",
---	offensive = true,
---	duration = 20,
---	cooldown = 300
---}
 
 -- Hunter/talent
 -- Binding Shot
@@ -143,14 +113,6 @@ LCT_SpellData[130392] = {
 	offensive = true,
 	cooldown = 20
 }
--- Lynx Rush
--- V: removed in legion
---LCT_SpellData[120697] = {
---	class = "HUNTER",
---	talent = true,
---	offensive = true,
---	cooldown = 90
---}
 -- Barrage
 LCT_SpellData[120360] = {
 	class = "HUNTER",
@@ -159,24 +121,6 @@ LCT_SpellData[120360] = {
 	duration = 3,
 	cooldown = 20
 }
--- Glaive Toss
--- V: removed in legion
---LCT_SpellData[117050] = {
---	class = "HUNTER",
---	talent = true,
---	offensive = true,
---	cc = true,
---	cooldown = 15
---}
--- Powershot
--- V: removed in legion
---LCT_SpellData[109259] = {
---	class = "HUNTER",
---	talent = true,
---	offensive = true,
---	knockback = true,
---	cooldown = 45
---}
 -- Intimidation
 LCT_SpellData[19577] = {
 	class = "HUNTER",
@@ -217,23 +161,6 @@ LCT_SpellData[53209] = {
 	offensive = true,
 	cooldown = 9
 }
--- Hunter/255 - Survival
--- Explosive Shot
---LCT_SpellData[53301] = {
---	class = "HUNTER",
---	specID = { 255 },
---	offensive = true,
---	cooldown = 6
---}
--- Black Arrow
---V: removed in legion 
---LCT_SpellData[3674] = {
---	class = "HUNTER",
---	specID = { 255 },
---	offensive = true,
---	cooldown = 24
---}
-
 -- Pet/Ferocity
 -- Heart of the Phoenix
 LCT_SpellData[55709] = {
