@@ -235,8 +235,8 @@ local g1_defaults = MakeGroupDb {
 
 local g2_defaults = MakeGroupDb {
 	cooldownsGroupId = 2,
-	cooldownsPerColumn = 1,
-	cooldownsMax = 1,
+	cooldownsPerColumn = 2,
+	cooldownsMax = 2,
 	cooldownsSize = 42,
 	cooldownsCrop = true,
 	cooldownsTooltips = false,
@@ -427,7 +427,6 @@ function Cooldowns:LCT_CooldownUsed(event, unit, spellid)
 end
 
 function Cooldowns:LCT_CooldownDetected(event, unit, spellid)
-	print("wesh yo")
 	self:UpdateIcons(unit)
 end
 
@@ -605,15 +604,9 @@ local function GetCooldownList(unit, group)
 		if db.cooldownsSpells[spellid] or (spelldata.replaces and db.cooldownsSpells[spelldata.replaces]) then
 			local tracked = CT:GetUnitCooldownInfo(unit, spellid)
 			local detected = tracked and tracked.detected
-			if spelldata.pvp_trinket then
-				print("debug pvp"..spellid.."@"..unit.."="..(detected and "detected" or "not detected"))
-			end
 			-- check if the spell has a cooldown valid for an arena, and check if it is a talent that has not yet been detected
 			if (not spelldata.cooldown or spelldata.cooldown < 600) and
-			   ((not spelldata.glyph and not spelldata.talent and not spelldata.pet and not spelldata.pvp_trinket) or detected or not db.cooldownsHideTalentsUntilDetected) then
-				if spelldata.pvp_trinket then
-					print("cooldown list@"..unit.."="..spellid)
-				end
+			   (not (spelldata.glyph or spelldata.talent or spelldata.pet) or detected or not db.cooldownsHideTalentsUntilDetected) then
 				-- check if the spell requires an aura
 				if not spelldata.requires_aura or UnitBuff(unit, spelldata.requires_aura_name) then
 					if spelldata.replaces then

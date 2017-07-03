@@ -168,6 +168,9 @@ end
 
 local function AddCharge(unit, spellid)
 	local tps = lib.tracked_players[unit][spellid]
+	if not tps then
+		return
+	end
 	tps.charges = tps.charges + 1
 	lib.callbacks:Fire("LCT_CooldownUsed", unit, spellid)
 
@@ -310,7 +313,7 @@ local function CooldownEvent(event, unit, spellid)
 				if spelldata.sets_cooldown then
 					local cspellid = spelldata.sets_cooldown.spellid
 					local cspelldata = SpellData[cspellid]
-					if (tpu[cspellid] and tpu[cspellid].detected) or (not cspelldata.talent and not cspelldata.glyph) then
+					if cspelldata and ((tpu[cspellid] and tpu[cspellid].detected) or (not cspelldata.talent and not cspelldata.glyph)) then
 						if not tpu[cspellid] then
 							tpu[cspellid] = {}
 						end
@@ -411,13 +414,19 @@ function lib:GetUnitCooldownInfo(unitid, spellid)
 end
 
 function lib:SetUnitTrinket(unit, spellid)
-	local tpu = lib.tracked_players[unitid]
-	if tpu and not tpu[spellid] then
-		print("reg@"..unit.."="..spellid)
-		tpu[spellid] = { detected = true }
+	if not spellid then
+		return
 	end
-	if not tpu then
-		print("no tpu@"..unit)
+	if not lib.tracked_players[unit] then
+		lib.tracked_players[unit] = {}
+	end
+	local spell = lib.tracked_players[unit][spellid]
+	if not spell then
+		lib.tracked_players[unit][spellid] = {
+			detected = true
+		}
+	elseif not spell.detected then
+		spell.detected = true
 	end
 end
 
@@ -584,8 +593,7 @@ function events:UNIT_NAME_UPDATE(event, unit)
 end
 
 function events:ARENA_CROWD_CONTROL_SPELL_UPDATE(event, unit, spellID)
-	print("ARENA_CROWD_CONTROL_SPELL_UPDATE@"..unit.."="..spellID)
-	lib.SetUnitTrinket(unit, spellID)
+	lib:SetUnitTrinket(unit, spellID)
 	lib.callbacks:Fire("LCT_CooldownDetected", unit, spellid)
 end
 
@@ -593,8 +601,6 @@ function events:ARENA_COOLDOWNS_UPDATE(event, unit)
 	C_PvP.RequestCrowdControlSpell(unit)
 	local spellID, startTime, duration = C_PvP.GetArenaCrowdControlInfo(unit)
 	if spellID then
-		print("ARENA_COOLDOWNS_UPDATE@"..unit.."="..spellID)
-		lib.SetUnitTrinket(unit, spellID)
-		lib.callbacks:Fire("LCT_CooldownDetected", unit, spellid)
+		CooldownEvent("UNIT_SPELLCAST_SUCCEEDED", unit, spellID)
 	end
 end

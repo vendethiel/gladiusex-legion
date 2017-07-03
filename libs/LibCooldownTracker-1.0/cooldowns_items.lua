@@ -11,29 +11,32 @@ LCT_SpellData[59752] = {
 }
 
 -- Honorable Medallion
-LCT_SpellData[195710] = {
-	pvp_trinket = true,
-	sets_cooldown = { spellid = 7744, cooldown = 30 },
-	cooldown = 180
-}
+--LCT_SpellData[195710] = {
+--	pvp_trinket = true,
+--	sets_cooldown = { spellid = 7744, cooldown = 30 },
+--	cooldown = 180
+--}
 -- Gladiator's Medallion
 LCT_SpellData[208683] = {
 	pvp_trinket = true,
-	replaces = 195710,
+--	talent = true,
+--	replaces = 195710,
 	sets_cooldown = { spellid = 7744, cooldown = 30 },
 	cooldown = 120
 }
 -- Adaptation
 LCT_SpellData[214027] = {
 	pvp_trinket = true,
-	replaces = 195710,
+	talent = true,
+	replaces = 208683,
 	sets_cooldown = { spellid = 7744, cooldown = 30 },
 	cooldown = 60
 }
 -- Relentless
 LCT_SpellData[196029] = {
 	pvp_trinket = true,
-	replaces = 195710,
+	talent = true,
+	replaces = 208683,
 	sets_cooldown = { spellid = 7744, cooldown = 30 }
 }
 
