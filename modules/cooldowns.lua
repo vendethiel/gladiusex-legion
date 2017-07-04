@@ -19,7 +19,7 @@ local function GetDefaultSpells()
 			--[107079] = true, -- Pandaren/Quaking Palm
 			--[69070] = true, -- Goblin/Rocket Jump
 			--[7744] = true, -- Scourge/Will of the Forsaken
---
+
 			--[42650] = true, -- Death Knight/Army of the Dead
 			--[48743] = true, -- Death Knight/Death Pact
 			[48707] = true, -- Death Knight/Anti-Magic Shell
@@ -35,7 +35,13 @@ local function GetDefaultSpells()
 			--V: removed in legion [108200] = true, -- Death Knight/Remorseless Winter
 			[47476] = true, -- Death Knight/Strangulate
 			[49206] = true, -- Death Knight/Summon Gargoyle
---
+
+			[191427] = true, -- Demon Hunter/Metamorphosis (Havoc)
+			[187827] = true, -- Demon Hunter/Metamorphosis (Vengeance)
+			[196555] = true, -- Demon Hunter/Netherwalk
+			[196718] = true, -- Demon Hunter/Darkness
+			[198589] = true, -- Demon Hunter/Blur
+
 			[22812] = true, -- Druid/Barkskin
 			[33786] = true, -- Druid/Cyclone (feral)
 			[99] = true, -- Druid/Disorienting Roar
@@ -51,7 +57,7 @@ local function GetDefaultSpells()
 			[78675] = true, -- Druid/Solar Beam
 			[132469] = true, -- Druid/Typhoon
 			[102793] = true, -- Druid/Ursol's Vortex
---
+
 			[19574] = true, -- Hunter/Bestial Wrath
 			[19263] = true, -- Hunter/Deterrence
 			[781] = true, -- Hunter/Disengage
@@ -61,17 +67,17 @@ local function GetDefaultSpells()
 			[50519] = true, -- Hunter/Sonic Blast
 			[121818] = true, -- Hunter/Stampede
 			[19386] = true, -- Hunter/Wyvern Sting
---
+
 			[108843] = true, -- Mage/Blazing Speed
 			[1953] = true, -- Mage/Blink
-			--V: removed in legion [11958] = true, -- Mage/Cold Snap
+			[235219] = true, -- Mage/Cold Snap. V: changed ID in legion
 			[2139] = true, -- Mage/Counterspell
 			--V: removed in legion [44572] = true, -- Mage/Deep Freeze
 			[122] = true, -- Mage/Frost Nova
 			--V: removed in legion [102051] = true, -- Mage/Frostjaw
 			[113074] = true, -- Mage/Healing Touch
 			[45438] = true, -- Mage/Ice Block
---
+
 			[115450] = true, -- Monk/Detox
 			[122783] = true, -- Monk/Diffuse Magic
 			[113656] = true, -- Monk/Fists of Fury
@@ -110,7 +116,7 @@ local function GetDefaultSpells()
 --
 			[13750] = true, -- Rogue/Adrenaline Rush
 			[2094] = true, -- Rogue/Blind
-			[31230] = true, -- Rogue/Cheat Death
+			--V: removed in legion [31230] = true, -- Rogue/Cheat Death
 			[31224] = true, -- Rogue/Cloak of Shadows
 			[1766] = true, -- Rogue/Kick
 			[137619] = true, -- Rogue/Marked for Death

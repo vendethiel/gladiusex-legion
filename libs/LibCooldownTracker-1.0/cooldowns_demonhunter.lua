@@ -21,7 +21,7 @@ LCT_SpellData[191427] = {
 	cooldown = 300
 }
 -- Netherwalk
-LCT_SpellData[191427] = {
+LCT_SpellData[196555] = {
 	class = "DEMONHUNTER",
 	specID = { 577 },
 	defensive = true,
