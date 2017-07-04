@@ -101,7 +101,7 @@ LCT_SpellData[105174] = {
 	cooldown = 15
 }
 -- Call Fel Lord
-LCT_SpellData[195098] = {
+LCT_SpellData[212459] = {
 	class = "WARLOCK",
 	specID = { 266 },
 	talent = true,

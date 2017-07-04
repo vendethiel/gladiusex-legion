@@ -9,7 +9,8 @@ local pairs, select, unpack = pairs, select, unpack
 local GetTime, SetPortraitTexture = GetTime, SetPortraitTexture
 local GetSpellInfo, UnitAura, UnitClass, UnitGUID, UnitBuff, UnitDebuff = GetSpellInfo, UnitAura, UnitClass, UnitGUID, UnitBuff, UnitDebuff
 local UnitIsVisible, UnitIsConnected, GetSpecializationInfoByID, GetTexCoordsForRole = UnitIsVisible, UnitIsConnected, GetSpecializationInfoByID, GetTexCoordsForRole
-local CLASS_BUTTONS = CLASS_BUTTONS
+
+--local CLASS_BUTTONS = CLASS_BUTTONS
 
 -- NOTE: this list can be modified from the ClassIcon module options, no need to edit it here
 -- Nonetheless, if you think that we missed an important aura, please post it on the addon site at curse or wowace
