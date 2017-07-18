@@ -20,12 +20,6 @@ LCT_SpellData[212295] = {
 	duration = 5,
 	cooldown = 45
 }
--- Seed of Corruption
---LCT_SpellData[87385] = {
---	class = "WARLOCK",
---	offensive = true,
---	cooldown = 60
---}
 -- Demonic Circle: Teleport
 LCT_SpellData[48020] = {
 	class = "WARLOCK",
@@ -34,15 +28,6 @@ LCT_SpellData[48020] = {
 }
 
 -- Warlock/talent
--- Dark Regeneration
-LCT_SpellData[108359] = {
-	class = "WARLOCK",
-	talent = true,
-	defensive = true,
-	heal = true,
-	duration = 12,
-	cooldown = 120
-}
 -- Howl of Terror
 LCT_SpellData[5484] = {
 	class = "WARLOCK",

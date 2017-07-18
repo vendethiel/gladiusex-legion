@@ -93,13 +93,6 @@ LCT_SpellData[108271] = {
 	duration = 8,
 	cooldown = 90
 }
--- Call of the Elements
-LCT_SpellData[108285] = {
-	class = "SHAMAN",
-	talent = true,
-	-- rests=... = true, TODO: this [V: what do you mean]
-	cooldown = 180
-}
 -- Earthgrab Totem
 LCT_SpellData[51485] = {
 	class = "SHAMAN",
@@ -133,11 +126,11 @@ LCT_SpellData[108280] = {
 	cooldown = 180
 }
 -- Stone Bulwark Totem
-LCT_SpellData[108270] = {
+LCT_SpellData[198838] = {
 	class = "SHAMAN",
+	specID = { 264 },
 	talent = true,
 	defensive = true,
-	duration = 30,
 	cooldown = 60
 }
 -- Windwalk Totem
@@ -209,7 +202,7 @@ LCT_SpellData[114051] = {
 	specID = { 263 },
 	talent = true,
 	offensive = true,
-	cooldown = 10
+	cooldown = 180
 }
 -- Lava Lash
 LCT_SpellData[60103] = {

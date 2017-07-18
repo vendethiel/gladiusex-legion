@@ -591,6 +591,7 @@ function GladiusEx:HideFrames()
 		self:QueueUpdate()
 	end
 
+	print("frames hidden")
 	-- hide frames instead of just setting alpha to 0
 	for unit, button in pairs(self.buttons) do
 		-- reset spec data
@@ -621,7 +622,7 @@ function GladiusEx:PLAYER_ENTERING_WORLD()
 	-- check if we are entering or leaving an arena
 	if instanceType == "arena" then
 		self:SetTesting(false)
-		self:ShowFrames()
+		-- self:ShowFrames()
 		self:ARENA_PREP_OPPONENT_SPECIALIZATIONS()
 		log("ENABLE LOGGING")
 	else
@@ -636,23 +637,30 @@ end
 
 function GladiusEx:ARENA_PREP_OPPONENT_SPECIALIZATIONS()
 	self:CheckArenaSize()
+	self:ShowFrames()
 
 	local numOpps = GetNumArenaOpponentSpecs()
 	for i = 1, numOpps do
 		local specID = GetArenaOpponentSpec(i)
 		local unitid = "arena" .. i
 
-		self:UpdateUnitSpecialization(unitid, specID)
+		if specID and specID > 0 then
+			print("do do do prep:"..unitid.."/"..specID)
+			self:ShowUnit(unitid)
+			self:UpdateUnitSpecialization(unitid, specID)
+			self:UpdateUnit(unitid)
+			self:UpdateUnitState(unitid, true)
+			self:RefreshUnit(unitid)
+		end
 	end
+	self:UpdateFrames()
 end
 
 function GladiusEx:CheckOpponentSpecialization(unit)
 	local id = strmatch(unit, "^arena(%d+)$")
 	if id then
 		local specID = GetArenaOpponentSpec(tonumber(id))
-		if specID and specID > 0 then
-			self:UpdateUnitSpecialization(unit, specID)
-		end
+		self:UpdateUnitSpecialization(unit, specID)
 	end
 end
 
@@ -670,6 +678,7 @@ function GladiusEx:ARENA_OPPONENT_UPDATE(event, unit, type)
 		self:UpdateUnitState(unit, true)
 	elseif type == "cleared" then
 		if not self:IsTesting() then
+			print("cleared unit:"..unit)
 			self:SoftHideUnit(unit)
 		end
 	end
@@ -782,6 +791,7 @@ function GladiusEx:UpdateUnitState(unit, stealth)
 	if not self.buttons[unit] then return end
 
 	if UnitIsDeadOrGhost(unit) then
+		print("unit is ded:"..unit)
 		self.buttons[unit].unit_state = STATE_DEAD
 		self.buttons[unit]:SetScript("OnUpdate", nil)
 		self.buttons[unit]:SetAlpha(self.db[unit].deadAlpha)
@@ -816,6 +826,7 @@ function GladiusEx:CheckUnitSpecialization(unit)
 end
 
 function GladiusEx:UpdateUnitSpecialization(unit, specID)
+	log("updateunit:"..unit)
 	local _, class, spec
 
 	if specID and specID > 0 then
@@ -899,6 +910,7 @@ function GladiusEx:ShowUnit(unit)
 end
 
 function GladiusEx:SoftHideUnit(unit)
+	print("V: debug: soft hide|"..unit)
 	log("SoftHideUnit", unit)
 	if not self.buttons[unit] then return end
 
@@ -916,6 +928,7 @@ function GladiusEx:SoftHideUnit(unit)
 end
 
 function GladiusEx:HideUnit(unit)
+	print("V: debug: hide|"..unit)
 	log("HideUnit", unit)
 	if not self.buttons[unit] then return end
 

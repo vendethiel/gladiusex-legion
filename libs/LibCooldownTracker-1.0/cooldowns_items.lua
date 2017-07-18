@@ -2,14 +2,6 @@
 
 -- TODO: currently only sets WoTF, should set EMFH(human) as well
 
--- Every Man For Himself
--- TODO needs to set all trinkets
-LCT_SpellData[59752] = {
-	race = "Human",
-	sets_cooldown = { spellid = 195710, cooldown = 30 },
-	cooldown = 120
-}
-
 -- Honorable Medallion
 LCT_SpellData[195710] = {
 	pvp_trinket = true,

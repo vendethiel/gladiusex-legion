@@ -20,19 +20,13 @@ local function GetDefaultSpells()
 			--[69070] = true, -- Goblin/Rocket Jump
 			--[7744] = true, -- Scourge/Will of the Forsaken
 
-			--[42650] = true, -- Death Knight/Army of the Dead
-			--[48743] = true, -- Death Knight/Death Pact
 			[48707] = true, -- Death Knight/Anti-Magic Shell
 			[108194] = true, -- Death Knight/Asphyxiate
 			[49576] = true, -- Death Knight/Death Grip
-			[108201] = true, -- Death Knight/Desecrated Ground
-			[47568] = true, -- Death Knight/Empower Rune Weapon
 			[48792] = true, -- Death Knight/Icebound Fortitude
 			[49039] = true, -- Death Knight/Lichborne
 			[47528] = true, -- Death Knight/Mind Freeze
 			[51271] = true, -- Death Knight/Pillar of Frost
-			[61999] = true, -- Death Knight/Raise Ally
-			--V: removed in legion [108200] = true, -- Death Knight/Remorseless Winter
 			[47476] = true, -- Death Knight/Strangulate
 			[49206] = true, -- Death Knight/Summon Gargoyle
 
@@ -52,7 +46,6 @@ local function GetDefaultSpells()
 			[5211] = true, -- Druid/Mighty Bash
 			[88423] = true, -- Druid/Nature's Cure
 			[132158] = true, -- Druid/Nature's Swiftness
-			--V: removed in legion [132158] = true, -- Druid/Nature's Swiftness
 			[2782] = true, -- Druid/Remove Corruption
 			[78675] = true, -- Druid/Solar Beam
 			[132469] = true, -- Druid/Typhoon
@@ -72,10 +65,7 @@ local function GetDefaultSpells()
 			[1953] = true, -- Mage/Blink
 			[235219] = true, -- Mage/Cold Snap. V: changed ID in legion
 			[2139] = true, -- Mage/Counterspell
-			--V: removed in legion [44572] = true, -- Mage/Deep Freeze
 			[122] = true, -- Mage/Frost Nova
-			--V: removed in legion [102051] = true, -- Mage/Frostjaw
-			[113074] = true, -- Mage/Healing Touch
 			[45438] = true, -- Mage/Ice Block
 
 			[115450] = true, -- Monk/Detox
@@ -84,7 +74,6 @@ local function GetDefaultSpells()
 			[115203] = true, -- Monk/Fortifying Brew
 			[119381] = true, -- Monk/Leg Sweep
 			[116849] = true, -- Monk/Life Cocoon
-			--V: removed in legion [137562] = true, -- Monk/Nimble Brew
 			[115078] = true, -- Monk/Paralysis
 			[115310] = true, -- Monk/Revival
 			[116844] = true, -- Monk/Ring of Peace
@@ -97,7 +86,6 @@ local function GetDefaultSpells()
 			[4987] = true, -- Paladin/Cleanse
 			[31821] = true, -- Paladin/Devotion Aura
 			[642] = true, -- Paladin/Divine Shield
-			--V: removed in legion [105593] = true, -- Paladin/Fist of Justice
 			[853] = true, -- Paladin/Hammer of Justice
 			[96231] = true, -- Paladin/Rebuke
 			[20066] = true, -- Paladin/Repentance
@@ -110,13 +98,10 @@ local function GetDefaultSpells()
 			[8122] = true, -- Priest/Psychic Scream
 			[527] = true, -- Priest/Purify
 			[15487] = true, -- Priest/Silence
-			[112833] = true, -- Priest/Spectral Guise
 			[10060] = true, -- V: Priest/Power Infusion
-			--V: removed in legion [108920] = true, -- Priest/Void Tendrils
 --
 			[13750] = true, -- Rogue/Adrenaline Rush
 			[2094] = true, -- Rogue/Blind
-			--V: removed in legion [31230] = true, -- Rogue/Cheat Death
 			[31224] = true, -- Rogue/Cloak of Shadows
 			[1766] = true, -- Rogue/Kick
 			[137619] = true, -- Rogue/Marked for Death
@@ -128,25 +113,16 @@ local function GetDefaultSpells()
 --
 			[114049] = true, -- Shaman/Ascendance
 			[51886] = true, -- Shaman/Cleanse Spirit
-			--V: removed in legion [8177] = true, -- Shaman/Grounding Totem
 			[108280] = true, -- Shaman/Healing Tide Totem
 			[51514] = true, -- Shaman/Hex
 			[77130] = true, -- Shaman/Purify Spirit
-			--V: removed in legion [30823] = true, -- Shaman/Shamanistic Rage
 			[113286] = true, -- Shaman/Solar Beam
 			[98008] = true, -- Shaman/Spirit Link Totem
 			[79206] = true, -- Shaman/Spiritwalker's Grace
 			[51490] = true, -- Shaman/Thunderstorm
-			--V: removed in legion [8143] = true, -- Shaman/Tremor Totem
 			[57994] = true, -- Shaman/Wind Shear
 --
 			[89766] = true, -- Warlock/Axe Toss
-			--V: removed in legion [111397] = true, -- Warlock/Blood Horror
-			--V: removed in legion [110913] = true, -- Warlock/Dark Bargain
-			[108359] = true, -- Warlock/Dark Regeneration
-			--V: removed in legion [113858] = true, -- Warlock/Dark Soul: Instability
-			--V: removed in legion [113861] = true, -- Warlock/Dark Soul: Knowledge
-			--V: removed in legion [113860] = true, -- Warlock/Dark Soul: Misery
 			[48020] = true, -- Warlock/Demonic Circle: Teleport
 			[5484] = true, -- Warlock/Howl of Terror
 			[6789] = true, -- Warlock/Mortal Coil
@@ -166,7 +142,6 @@ local function GetDefaultSpells()
 			[23920] = true, -- Warrior/Spell Reflection
 		},
 		{ -- group 2
-			--[42292] = true, -- ITEMS/PvP Trinket
 			[195710] = true, -- honorable medallion
 			[208683] = true, -- gladiator's medallion
 		}

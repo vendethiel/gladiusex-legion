@@ -86,6 +86,13 @@ LCT_SpellData[107566] = {
 	cc = true,
 	cooldown = 40
 }
+-- Sharpen Blade
+LCT_SpellData[198817] = {
+	class = "WARRIOR",
+	specID = { 71 },
+	talent = true,
+	cooldown = 25
+}
 -- Shockwave
 LCT_SpellData[46968] = {
 	class = "WARRIOR",

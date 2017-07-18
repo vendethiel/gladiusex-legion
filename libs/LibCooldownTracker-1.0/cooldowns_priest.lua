@@ -82,14 +82,6 @@ LCT_SpellData[19236] = {
 	defensive = true,
 	cooldown = 120
 }
--- Spectral Guise
-LCT_SpellData[112833] = {
-	class = "PRIEST",
-	talent = true,
-	defensive = true,
-	duration = 6,
-	cooldown = 30
-}
 -- Power Infusion
 LCT_SpellData[10060] = {
 	class = "PRIEST",

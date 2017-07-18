@@ -6,6 +6,14 @@ LCT_SpellData[59544] = {
 	duration = 5,
 	cooldown = 180,
 }
+-- Every Man For Himself
+-- TODO needs to set all trinkets
+LCT_SpellData[59752] = {
+	race = "Human",
+	sets_cooldown = { spellid = 208683, cooldown = 30 },
+	cooldown = 120
+}
+
 LCT_SpellData[28880] = 59544
 LCT_SpellData[59542] = 59544
 LCT_SpellData[59543] = 59544

@@ -24,6 +24,7 @@ LCT_SpellData[5277] = {
 -- Gouge
 LCT_SpellData[1776] = {
 	class = "ROGUE",
+	specID = { 260 },
 	cc = true,
 	cooldown = 10
 }
@@ -123,34 +124,15 @@ LCT_SpellData[209782] = {
 	duration = 6,
 	cooldown = 60,
 }
-
--- Rogue/talents
--- Cheat Death
-LCT_SpellData[31230] = {
-	class = "ROGUE",
-	talent = true,
-	defensive = true,
-	duration = 3,
-	cooldown = 90
-}
-LCT_SpellData[45181] = 31230
--- Combat Readiness
-LCT_SpellData[74001] = {
-	class = "ROGUE",
-	talent = true,
-	defensive = true,
-	duration = 20,
-	cooldown = 120
-}
--- Preparation
 -- Shadowstep
 LCT_SpellData[36554] = {
 	class = "ROGUE",
-	talent = true,
-	offensive = true,
+	specID = { 259, 261 },
 	duration = 2,
 	cooldown = 20
 }
+-- Rogue/talents
+-- Marked for death
 LCT_SpellData[137619] = {
 	class = "ROGUE",
 	talent = true,

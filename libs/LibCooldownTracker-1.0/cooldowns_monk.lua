@@ -11,7 +11,7 @@ LCT_SpellData[109132] = {
 	charges = 2,
 	cooldown = 20,
 }
--- Chii Torpedo
+-- Chi Torpedo
 LCT_SpellData[115008] = 109132
 
 -- Detox
@@ -20,13 +20,6 @@ LCT_SpellData[115450] = {
 	dispel = true,
 	cooldown_starts_on_dispel = true,
 	cooldown = 8,
-}
--- Expel Harm
-LCT_SpellData[115072] = {
-	class = "MONK",
-	heal = true,
-	offensive = true,
-	cooldown = 15,
 }
 -- Fortifying Brew
 LCT_SpellData[115203] = {
@@ -143,9 +136,10 @@ LCT_SpellData[233759] = {
 	cooldown = 60
 }
 -- Serenity
-LCT_SpellData[152137] = {
+LCT_SpellData[152173] = {
 	class = "MONK",
 	specID = { 269 },
+	talent = true,
 	offensive = true,
 	duration = 8,
 	cooldown = 90
@@ -189,6 +183,7 @@ LCT_SpellData[115308] = {
 	defensive = true,
 	duration = 3,
 	cooldown = 6,
+	charges = 3,
 }
 -- Keg Smash
 LCT_SpellData[121253] = {
