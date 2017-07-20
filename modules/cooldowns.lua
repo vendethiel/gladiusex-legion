@@ -1860,7 +1860,7 @@ function Cooldowns:MakeGroupOptions(unit, group)
 					-- spec
 					for _, specID in ipairs(spelldata.specID) do
 						if not args[spelldata.class].args["spec" .. specID] then
-							local _, name, description, icon, background, role, class = GetSpecializationInfoByID(specID)
+							local _, name, description, icon, role, class = GetSpecializationInfoByID(specID)
 							args[spelldata.class].args["spec" .. specID] = {
 								type = "group",
 								name = name,

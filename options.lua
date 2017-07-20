@@ -649,7 +649,7 @@ function GladiusEx:SetupOptions()
 					get = function() return self.db.base.testUnits[unit].specID end,
 					set = function(info, value)
 						self.db.base.testUnits[unit].specID = value
-						self.db.base.testUnits[unit].unitClass = select(7, GetSpecializationInfoByID(value))
+						self.db.base.testUnits[unit].unitClass = select(6, GetSpecializationInfoByID(value))
 						self:UpdateFrames()
 					end,
 					values = function()

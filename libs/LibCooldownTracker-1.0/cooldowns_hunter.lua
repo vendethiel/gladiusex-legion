@@ -51,7 +51,7 @@ LCT_SpellData[53271] = {
 }
 -- Aspect of Turtle. old: Deterrence
 -- V: legion id 19263 => 186265
-LCT_SpellData[19263] = {
+LCT_SpellData[186265] = {
 	class = "HUNTER",
 	defensive = true,
 	duration = 8,

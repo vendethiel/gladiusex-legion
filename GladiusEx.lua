@@ -591,7 +591,6 @@ function GladiusEx:HideFrames()
 		self:QueueUpdate()
 	end
 
-	print("frames hidden")
 	-- hide frames instead of just setting alpha to 0
 	for unit, button in pairs(self.buttons) do
 		-- reset spec data
@@ -645,7 +644,6 @@ function GladiusEx:ARENA_PREP_OPPONENT_SPECIALIZATIONS()
 		local unitid = "arena" .. i
 
 		if specID and specID > 0 then
-			print("do do do prep:"..unitid.."/"..specID)
 			self:ShowUnit(unitid)
 			self:UpdateUnitSpecialization(unitid, specID)
 			self:UpdateUnit(unitid)
@@ -678,7 +676,6 @@ function GladiusEx:ARENA_OPPONENT_UPDATE(event, unit, type)
 		self:UpdateUnitState(unit, true)
 	elseif type == "cleared" then
 		if not self:IsTesting() then
-			print("cleared unit:"..unit)
 			self:SoftHideUnit(unit)
 		end
 	end
@@ -791,7 +788,6 @@ function GladiusEx:UpdateUnitState(unit, stealth)
 	if not self.buttons[unit] then return end
 
 	if UnitIsDeadOrGhost(unit) then
-		print("unit is ded:"..unit)
 		self.buttons[unit].unit_state = STATE_DEAD
 		self.buttons[unit]:SetScript("OnUpdate", nil)
 		self.buttons[unit]:SetAlpha(self.db[unit].deadAlpha)
@@ -829,9 +825,11 @@ function GladiusEx:UpdateUnitSpecialization(unit, specID)
 	log("updateunit:"..unit)
 	local _, class, spec
 
-	if specID and specID > 0 then
-		_, spec, _, _, _, _, class = GetSpecializationInfoByID(specID)
+	if not specID or specID < 1 then
+		return
 	end
+	-- V: note that "background" was removed (after icon)
+	local id, name, description, icon, role, class = GetSpecializationInfoByID(specID)
 
 	specID = (specID and specID > 0) and specID or nil
 
@@ -910,7 +908,6 @@ function GladiusEx:ShowUnit(unit)
 end
 
 function GladiusEx:SoftHideUnit(unit)
-	print("V: debug: soft hide|"..unit)
 	log("SoftHideUnit", unit)
 	if not self.buttons[unit] then return end
 
@@ -928,7 +925,6 @@ function GladiusEx:SoftHideUnit(unit)
 end
 
 function GladiusEx:HideUnit(unit)
-	print("V: debug: hide|"..unit)
 	log("HideUnit", unit)
 	if not self.buttons[unit] then return end
 

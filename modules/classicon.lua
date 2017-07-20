@@ -467,11 +467,13 @@ function ClassIcon:SetClassIcon(unit)
 	local class, specID
 	if not GladiusEx:IsTesting(unit) then
 		class = select(2, UnitClass(unit))
+		specID = GladiusEx.buttons[unit].specID
 		-- check for arena prep info
 		if not class then
-			class = GladiusEx.buttons[unit].class
+			if GladiusEx.buttons[unit].class then
+				class = GladiusEx.buttons[unit].class
+			end
 		end
-		specID = GladiusEx.buttons[unit].specID
 	else
 		class = GladiusEx.testing[unit].unitClass
 		specID = GladiusEx.testing[unit].specID
@@ -485,7 +487,6 @@ function ClassIcon:SetClassIcon(unit)
 		texture = [[Interface\Icons\INV_Misc_QuestionMark]]
 		left, right, top, bottom = 0, 1, 0, 1
 		needs_crop = true
-		print("classicon for "..unit.."=class@"..(class or -1).."/spec@"..(specID or -1).."="..texture)
 	elseif self.db[unit].classIconMode == "ROLE" and specID then
 		local _, _, _, _, _, role = GetSpecializationInfoByID(specID)
 		texture = [[Interface\LFGFrame\UI-LFG-ICON-ROLES]]
