@@ -1,6 +1,9 @@
 ﻿local locale = LibStub("AceLocale-3.0")
 local L
 
+-- V: untranslated keys:
+-- ["Interrupts"]
+
 L = locale:NewLocale("GladiusEx", "deDE")
 if L then
 L["Absorbs"] = "Absorptionen"

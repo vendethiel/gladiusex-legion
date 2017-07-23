@@ -315,6 +315,11 @@ function ClassIcon:ScanAuras(unit)
 	local best_priority = 0
 	local best_name, best_icon, best_duration, best_expires
 
+	local interrupt = {Interrupt:GetInterruptFor(unit)}
+	if interrupt[1] then
+		return unpack(interrupt) 
+	end
+
 	local function handle_aura(name, spellid, icon, duration, expires)
 		local prio = self:GetImportantAura(unit, name) or self:GetImportantAura(unit, spellid)
 		-- V: make sure we have a best_expires before comparing it

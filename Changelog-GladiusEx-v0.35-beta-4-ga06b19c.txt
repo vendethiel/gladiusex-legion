@@ -1,3 +1,9 @@
+Vendethiel:
+	- ported to legion, fixed a few bugs
+	- updated spellids for legion
+	- updated auras for legion
+	- updated trinkets to legion trinkets
+	- added an interrupt module
 Ketho:
 	- bandaid fix; Spell IDs not included
 slaren:
