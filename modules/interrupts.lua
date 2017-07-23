@@ -101,7 +101,6 @@ function Interrupt:GetInterruptFor(unit)
 	if GetTime() > endsAt then
 		self.interrupts[unit] = nil
 	else
-		print("I HAZ INTERRUPT")
 		local name, _, icon = GetSpellInfo(spellid)
 		return name, icon, duration, endsAt
 	end
