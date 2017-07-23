@@ -28,7 +28,7 @@ LCT_SpellData[214027] = {
 	pvp_trinket = true,
 	talent = true,
 	replaces = 208683,
-	--sets_cooldown = { spellid = 7744, cooldown = 30 },
+	sets_cooldowns = set_wotf_emfh,
 	cooldown = 60
 }
 -- Relentless

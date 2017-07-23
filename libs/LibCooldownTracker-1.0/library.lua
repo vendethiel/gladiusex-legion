@@ -309,29 +309,29 @@ local function CooldownEvent(event, unit, spellid)
 					tps.charge_timer = SetTimer(tps.cooldown_end, AddCharge, unit, spellid)
 				end
 
-				local function set_cooldown(cspellid, cooldown)
+				-- V: set other cooldown(s)
+				local sets_cooldowns = {}
+				if spelldata.sets_cooldown then
+					sets_cooldowns = {spelldata.sets_cooldown}
+				end
+				if spelldata.sets_cooldowns then
+					sets_cooldowns = spelldata.sets_cooldowns
+				end
+
+				for i = 1, #sets_cooldowns do
+					local cd = sets_cooldowns[i]
+					local cspellid = cd.spellid
 					local cspelldata = SpellData[cspellid]
 					if cspelldata and ((tpu[cspellid] and tpu[cspellid].detected) or (not cspelldata.talent and not cspelldata.glyph)) then
 						if not tpu[cspellid] then
 							tpu[cspellid] = {}
 						end
-						if not tpu[cspellid].cooldown_end or (tpu[cspellid].cooldown_end < (now + cooldown)) then
+						if not tpu[cspellid].cooldown_end or (tpu[cspellid].cooldown_end < (now + cd.cooldown)) then
 							tpu[cspellid].cooldown_start = now
-							tpu[cspellid].cooldown_end = now + cooldown
+							tpu[cspellid].cooldown_end = now + cd.cooldown
 							tpu[cspellid].used_start = tpu[cspellid].used_start or 0
 							tpu[cspellid].used_end = tpu[cspellid].used_end or 0
 						end
-					end
-				end
-
-				-- V: set other cooldown(s)
-				if spelldata.sets_cooldown then
-					local cd = spelldata.sets_cooldown
-					set_cooldown(cd.spellid, cd.cooldown)
-				elseif spelldata.sets_cooldowns then
-					for i = 1, #spelldata.sets_cooldowns do
-						local cd = spelldata.sets_cooldowns[i]
-						set_cooldown(cd.spellid, cd.cooldown)
 					end
 				end
 			end
@@ -609,7 +609,9 @@ end
 function events:ARENA_COOLDOWNS_UPDATE(event, unit)
 	C_PvP.RequestCrowdControlSpell(unit)
 	local spellID, startTime, duration = C_PvP.GetArenaCrowdControlInfo(unit)
-	if spellID then
+	-- V: the "duration ~= 30s" hack is because when using WOTF/EMFH, blizzard
+	--    also updates the actual trinket... but we discard duration
+	if spellID and duration ~= 30000 then
 		CooldownEvent("UNIT_SPELLCAST_SUCCEEDED", unit, spellID)
 	end
 end

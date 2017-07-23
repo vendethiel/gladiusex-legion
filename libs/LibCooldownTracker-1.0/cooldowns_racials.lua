@@ -10,7 +10,9 @@ set_trinkets = {
 	-- Gladiator's Medallion
 	{ spellid = 208683, cooldown = 30 },
 	-- Honorable Medallion
-	{ spellid = 208683, cooldown = 30 },
+	{ spellid = 195710, cooldown = 30 },
+	-- Adaptation
+	{ spellid = 214027, cooldown = 30 },
 }
 -- Every Man For Himself
 LCT_SpellData[59752] = {

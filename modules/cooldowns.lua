@@ -1823,6 +1823,12 @@ function Cooldowns:MakeGroupOptions(unit, group)
 				if spelldata.replaces then table.insert(extradesc, string.format(L["Replaces: %s"], GetSpellInfo(spelldata.replaces))) end
 				if spelldata.requires_aura then table.insert(extradesc, string.format(L["Required aura: %s"], GetSpellInfo(spelldata.requires_aura))) end
 				if spelldata.sets_cooldown then table.insert(extradesc, string.format(L["Shared cooldown: %s (%is)"], GetSpellInfo(spelldata.sets_cooldown.spellid), spelldata.sets_cooldown.cooldown)) end
+				if spelldata.sets_cooldowns then
+					for i = 1, #spelldata.sets_cooldowns do
+						local cd = spelldata.sets_cooldowns[i]
+						table.insert(extradesc, string.format(L["Shared cooldown: %s (%is)"], GetSpellInfo(cd.spellid), cd.cooldown))
+					end
+				end
 				if spelldata.cooldown_starts_on_aura_fade then table.insert(extradesc, L["Cooldown starts when aura fades"]) end
 				if spelldata.cooldown_starts_on_dispel then table.insert(extradesc, L["Cooldown starts on dispel"]) end
 				if spelldata.resets then table.insert(extradesc, string.format(L["Resets: %s"], table.concat(fn.sort(fn.map(spelldata.resets, GetSpellInfo)), ", "))) end
