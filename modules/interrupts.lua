@@ -88,6 +88,8 @@ end
 
 function Interrupt:UpdateInterrupt(unit, spellid, duration)
 	self.interrupts[unit] = { spellid, GetTime(), duration }
+	-- force update now, rather than at next tick
+	ClassIcon:UpdateAura(unit)
 end
 
 function Interrupt:GetInterruptFor(unit)
