@@ -309,20 +309,29 @@ local function CooldownEvent(event, unit, spellid)
 					tps.charge_timer = SetTimer(tps.cooldown_end, AddCharge, unit, spellid)
 				end
 
-				-- set other cooldowns
-				if spelldata.sets_cooldown then
-					local cspellid = spelldata.sets_cooldown.spellid
+				local function set_cooldown(cspellid, cooldown)
 					local cspelldata = SpellData[cspellid]
 					if cspelldata and ((tpu[cspellid] and tpu[cspellid].detected) or (not cspelldata.talent and not cspelldata.glyph)) then
 						if not tpu[cspellid] then
 							tpu[cspellid] = {}
 						end
-						if not tpu[cspellid].cooldown_end or (tpu[cspellid].cooldown_end < (now + spelldata.sets_cooldown.cooldown)) then
+						if not tpu[cspellid].cooldown_end or (tpu[cspellid].cooldown_end < (now + cooldown)) then
 							tpu[cspellid].cooldown_start = now
-							tpu[cspellid].cooldown_end = now + spelldata.sets_cooldown.cooldown
+							tpu[cspellid].cooldown_end = now + cooldown
 							tpu[cspellid].used_start = tpu[cspellid].used_start or 0
 							tpu[cspellid].used_end = tpu[cspellid].used_end or 0
 						end
+					end
+				end
+
+				-- V: set other cooldown(s)
+				if spelldata.sets_cooldown then
+					local cd = spelldata.sets_cooldown
+					set_cooldown(cd.spellid, cd.cooldown)
+				elseif spelldata.sets_cooldowns then
+					for i = 1, #spelldata.sets_cooldowns do
+						local cd = spelldata.sets_cooldowns[i]
+						set_cooldown(cd.spellid, cd.cooldown)
 					end
 				end
 			end

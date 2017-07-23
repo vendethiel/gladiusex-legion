@@ -6,12 +6,23 @@ LCT_SpellData[59544] = {
 	duration = 5,
 	cooldown = 180,
 }
+set_trinkets = {
+	-- Gladiator's Medallion
+	{ spellid = 208683, cooldown = 30 },
+	-- Honorable Medallion
+	{ spellid = 208683, cooldown = 30 },
+}
 -- Every Man For Himself
--- TODO needs to set all trinkets
 LCT_SpellData[59752] = {
 	race = "Human",
-	sets_cooldown = { spellid = 208683, cooldown = 30 },
+	sets_cooldowns = set_trinkets,
 	cooldown = 120
+}
+-- Will of the Forsaken (Undead)
+LCT_SpellData[7744] = {
+	race = "Scourge",
+	sets_cooldowns = set_trinkets, -- PvP trinket
+	cooldown = 120,
 }
 
 LCT_SpellData[28880] = 59544
@@ -47,13 +58,6 @@ LCT_SpellData[20577] = {
 	race = "Scourge",
 	heal = true,
 	duration = 10,
-	cooldown = 120,
-}
--- Will of the Forsaken (Undead)
-LCT_SpellData[7744] = {
-	race = "Scourge",
-	sets_cooldown = { spellid = 42292, cooldown = 30 }, -- PvP trinket
-	-- V: TODO need to set *ALL* pvp trinkets
 	cooldown = 120,
 }
 -- Darkflight (Worgen)

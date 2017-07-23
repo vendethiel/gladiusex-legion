@@ -32,6 +32,7 @@ LCT_SpellData[205191] = {
 LCT_SpellData[115750] = {
 	class = "PALADIN",
 	cc = true,
+	talent = true,
 	cooldown = 90
 }
 -- Cleanse
