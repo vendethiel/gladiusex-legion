@@ -17,6 +17,13 @@ LCT_SpellData[781] = {
 	defensive = true,
 	cooldown = 30
 }
+-- Counter Shot
+LCT_SpellData[147362] = {
+	class = "HUNTER",
+	interrupt = true,
+	cooldown = 24,
+	specID = { 253, 254 }, -- BM, MM
+}
 -- Freezing Trap
 -- V: legion id 1499 => 187650
 LCT_SpellData[187650] = {
@@ -77,7 +84,6 @@ LCT_SpellData[19386] = {
 -- Exhilaration
 LCT_SpellData[109304] = {
 	class = "HUNTER",
-	--talent = true, -- it's a "talent" all classes have by default
 	heal = true,
 	cooldown = 120
 }

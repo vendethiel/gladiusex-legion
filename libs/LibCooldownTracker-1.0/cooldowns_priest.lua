@@ -3,6 +3,7 @@
 -- Prayer of Mending
 LCT_SpellData[33076] = {
 	class = "PRIEST",
+	specID = { 257 },
 	heal = true,
 	cooldown = 10
 }
@@ -38,9 +39,18 @@ LCT_SpellData[32375] = {
 -- Psychic Scream
 LCT_SpellData[8122] = {
 	class = "PRIEST",
-	talent = true,
 	cc = true,
-	cooldown = 30,
+	specID = { 256, 258 },
+	cooldown = 30, -- V: consider all disc priests use the fear CD talent... Unless one uses shining force...
+}
+-- Shining Force
+LCT_SpellData[204263] = {
+	class = "PRIEST",
+	cc = true,
+	talent = true,
+	specID = { 256, 258 },
+	cooldown = 60,
+	replaces = 8122 -- replaces Psychic Scream
 }
 -- Phantasm
 LCT_SpellData[114239] = {

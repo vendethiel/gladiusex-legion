@@ -60,7 +60,8 @@ LCT_SpellData[1856] = {
 	class = "ROGUE",
 	defensive = true,
 	duration = 3,
-	cooldown = 120
+	cooldown = 120,
+	cooldown_overload = { [261] = 30 } -- V: consider all sub rogues use Thief's Bargain (...)
 }
 
 -- Rogue/Assassination 259

@@ -4,6 +4,8 @@ local fn = LibStub("LibFunctional-1.0")
 
 Interrupt = GladiusEx:NewGladiusExModule("Interrupts", {}, {})
 
+-- V: heavily inspired by Jaxington's Gladius-With-Interrupts
+
 INTERRUPTS = {
 	[6552] = 4,   -- [Warrior] Pummel
 	[96231] = 4,  -- [Paladin] Rebuke
@@ -68,6 +70,10 @@ function Interrupt:COMBAT_LOG_EVENT_UNFILTERED(event, ...)
 	if sub_event ~= "SPELL_CAST_SUCCESS" and sub_event ~= "SPELL_INTERRUPT" then
 		return
 	end
+	if sub_event == "SPELL_CAST_SUCCESS" and select(8,UnitChannelInfo(unit)) then
+		-- not interruptible
+		return
+	end
 
    	local duration = INTERRUPTS[spellID]
    	if not duration then return end
@@ -89,6 +95,7 @@ end
 function Interrupt:UpdateInterrupt(unit, spellid, duration)
 	self.interrupts[unit] = { spellid, GetTime(), duration }
 	-- force update now, rather than at next tick
+	if not ClassIcon then return end
 	ClassIcon:UpdateAura(unit)
 end
 

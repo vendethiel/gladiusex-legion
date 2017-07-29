@@ -134,7 +134,7 @@ local timer_frame
 
 local function Timer_OnUpdate()
 	local t1 = timers[1]
-	if GetTime() >= t1.time then
+	if t1 and GetTime() >= t1.time then
 		tremove(timers, 1)
 		t1.func(unpack(t1.args))
 		if #timers == 0 then
@@ -166,6 +166,23 @@ local function ClearTimers()
 	timers = {}
 end
 
+local function GetCooldownTime(spelldata, unit)
+	local time = spelldata.cooldown
+	-- V: note - this thing ties it to GladiusEx, but no choice :(
+	if GladiusEx and GladiusEx.buttons[unit] and spelldata.cooldown_overload then
+		local button = GladiusEx.buttons[unit]
+		local overloads = spelldata.cooldown_overload
+		if button.specID and overloads[button.specID] then
+			return overloads[button.specID]
+		end
+		local class = GladiusEx.buttons[unit].class or select(2, UnitClass(unit))
+		if class and overloads[class] then
+			return overloads[class]
+		end
+	end
+	return time
+end
+
 local function AddCharge(unit, spellid)
 	local tps = lib.tracked_players[unit][spellid]
 	if not tps then
@@ -179,7 +196,7 @@ local function AddCharge(unit, spellid)
 		local now = GetTime()
 		local spelldata = SpellData[spellid]
 		tps.cooldown_start = now
-		tps.cooldown_end = now + spelldata.cooldown
+		tps.cooldown_end = now + GetCooldownTime(spelldata, unit)
 		tps.charge_timer = SetTimer(tps.cooldown_end, AddCharge, unit, spellid)
 	else
 		tps.charge_timer = false
@@ -301,8 +318,9 @@ local function CooldownEvent(event, unit, spellid)
 		if cooldown_start then
 			-- if the spell has charges and the cooldown is already in progress, it does not need to be reset
 			if not tps.charges or not tps.cooldown_end or tps.cooldown_end <= now then
-				tps.cooldown_start = spelldata.cooldown and now
-				tps.cooldown_end = spelldata.cooldown and (now + spelldata.cooldown)
+				local cooldown_time = GetCooldownTime(spelldata, unit)
+				tps.cooldown_start = cooldown_time and now
+				tps.cooldown_end = cooldown_time and (now + cooldown_time)
 
 				-- set charge timer
 				if tps.charges and not tps.charge_timer then
@@ -602,6 +620,9 @@ function events:UNIT_NAME_UPDATE(event, unit)
 end
 
 function events:ARENA_CROWD_CONTROL_SPELL_UPDATE(event, unit, spellID)
+	-- V: sometimes we receive such an event for "nameplateX" or "focus"
+	if string.sub(unit, 1, 5) ~= "arena" then return end
+	
 	lib:SetUnitTrinket(unit, spellID)
 	lib.callbacks:Fire("LCT_CooldownDetected", unit, spellid)
 end
