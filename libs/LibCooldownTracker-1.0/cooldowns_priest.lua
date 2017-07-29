@@ -50,7 +50,7 @@ LCT_SpellData[204263] = {
 	talent = true,
 	specID = { 256, 258 },
 	cooldown = 60,
-	replaces = 8122 -- replaces Psychic Scream
+	--sets_cooldown_of = { [8122] = 60 } i.e. if you have shining force than psychic scream is 60s... unimplemented ofc
 }
 -- Phantasm
 LCT_SpellData[114239] = {

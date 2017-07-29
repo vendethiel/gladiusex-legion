@@ -419,6 +419,7 @@ Data.providers = {}
 -- Dispatch the spells in the final tables
 for category, spells in pairs(spellsAndProvidersByCategory) do
 
+	local i = 1
 	for spell, provider in pairs(spells) do
 		Data.spells[spell] = category
 		if provider == true then -- "== true" is really needed
@@ -427,6 +428,7 @@ for category, spells in pairs(spellsAndProvidersByCategory) do
 		else
 			Data.providers[spell] = provider
 		end
+		i = i + 1
 	end
 end
 
@@ -439,6 +441,11 @@ local function CheckDeprecatedCategory(cat)
 end
 
 -- Public APIs
+-- Get spells in a category
+function Data:GetSpellsByCategory(cat)
+	return spellsAndProvidersByCategory[cat]
+end
+
 -- Category name in something usable
 function Data:GetCategoryName(cat)
 	CheckDeprecatedCategory(cat)

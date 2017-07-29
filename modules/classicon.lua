@@ -77,14 +77,14 @@ local function GetDefaultImportantAuras()
 		[GladiusEx:SafeGetSpellName(13750)]	= 4,	-- Adrenaline Rush
 		[GladiusEx:SafeGetSpellName(152151)]	= 4,	-- Shadow Reflection
 		[GladiusEx:SafeGetSpellName(107574)]	= 4,	-- Avatar
-		--[GladiusEx:SafeGetSpellName(106952)]	= 4,	-- Berserk
 		[GladiusEx:SafeGetSpellName(12292)]	= 4,	-- Bloodbath
 		[GladiusEx:SafeGetSpellName(51271)]	= 4,	-- Pillar of Frost
 		[GladiusEx:SafeGetSpellName(1719)]	= 4,	-- Recklessness
 		[GladiusEx:SafeGetSpellName(185313)]	= 4,	-- Shadow Dance
 		-- Roots (5)
 		[GladiusEx:SafeGetSpellName(91807)]	= 5,	-- Shambling Rush (Ghoul)
-		[GladiusEx:SafeGetSpellName(61685)]	= 5,	-- Charge (Various)
+		[GladiusEx:SafeGetSpellName(61685)]	= 5,	-- Charge (Druid)
+		[GladiusEx:SafeGetSpellName(105771)]	= 5,	-- Charge (Warrior)
 		[GladiusEx:SafeGetSpellName(116706)]	= 5,	-- Disable
 		[GladiusEx:SafeGetSpellName(114404)]	= 5,	-- Void Tendrils
 		[GladiusEx:SafeGetSpellName(64695)]	= 5,	-- Earthgrab
@@ -95,7 +95,8 @@ local function GetDefaultImportantAuras()
 		[GladiusEx:SafeGetSpellName(122)]		= 5,	-- Frost Nova
 		[GladiusEx:SafeGetSpellName(102359)]	= 5,	-- Mass Entanglement
 		[GladiusEx:SafeGetSpellName(136634)]	= 5,	-- Narrow Escape
-		[GladiusEx:SafeGetSpellName(105771)]	= 5,	-- Warbringer
+		-- See Invis (also 5)
+		[GladiusEx:SafeGetSpellName(188501)]	= 5,	-- Spectral Sight
 		-- Offensive - Ranged / Spell Auras (6)
 		[GladiusEx:SafeGetSpellName(12042)]	= 6,	-- Arcane Power
 		[GladiusEx:SafeGetSpellName(114049)]	= 6,	-- Ascendance

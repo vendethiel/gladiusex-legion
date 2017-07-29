@@ -209,11 +209,11 @@ local function validate(options,errlvl,...)
 	if not tk then
 		err(".type: unknown type '"..options.type.."'", errlvl,...)
 	end
-	
+
 	-- make sure that all options[] are known parameters
 	for k,v in pairs(options) do
 		if not (tk[k] or basekeys[k]) then
-			err(": unknown parameter", errlvl,tostring(k),...)
+			err(": unknown parameter ("..k..")", errlvl,tostring(k),...)
 		end
 	end
 

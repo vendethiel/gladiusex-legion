@@ -4,6 +4,7 @@ Vendethiel:
 	- updated auras for legion
 	- updated trinkets to legion trinkets
 	- added an interrupt module
+	- added per-spec/per-class CD overloading (i.e. sub rogues have vanish CD at 30s. It's mostly a workaround)
 Ketho:
 	- bandaid fix; Spell IDs not included
 slaren:
