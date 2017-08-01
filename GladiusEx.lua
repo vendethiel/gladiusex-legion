@@ -1158,7 +1158,7 @@ end
 local perfect_scale
 function GladiusEx:GetPerfectScale()
 	if not perfect_scale then
-		perfect_scale = 768 / string.match(({GetScreenResolutions()})[GetCurrentResolution()], "%d+x(%d+)")
+		perfect_scale = 768 / GetScreenHeight()
 	end
 	return perfect_scale
 end
